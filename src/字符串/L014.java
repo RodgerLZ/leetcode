@@ -3,6 +3,7 @@ package 字符串;
 /**
  * 查找最长公共前缀
  */
+// TODO 使用树的算法
 public class L014 {
     public static String longestCommonPrefix(String[] strs) {
 
