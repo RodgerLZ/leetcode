@@ -9,6 +9,7 @@ public class L043 {
 
         int[] ints = new int[num1Len + num2Len + 1];
         for (int i=1; i<=num1Len; i++) {
+            // 通过ascii码计算数值
             int n1 = num1.charAt(num1Len - i) - '0';
             for (int j=1; j<=num2Len; j++) {
                 int n2 = num2.charAt(num2Len - j) - '0';
