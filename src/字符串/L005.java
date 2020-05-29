@@ -39,6 +39,7 @@ public class L005 {
 
     /**
      * 动态规划的方式解决最大回文子串
+     * https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-dong-tai-gui-hua-by-liweiwei1419/
      */
     public static String longestPalindromeDp(String s) {
 
