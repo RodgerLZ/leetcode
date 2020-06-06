@@ -1,6 +1,9 @@
 package 动态规划;
 
-public class M0042 {
+/**
+ * 53. 最大子序和
+ */
+public class L0053 {
     public static int maxSubArray(int[] nums) {
 
         if (nums.length == 0) return 0;
