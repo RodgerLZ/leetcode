@@ -4,6 +4,7 @@ package 动态规划;
  * 300. 最长上升子序列
  */
 public class L0300 {
+    // todo 时间复杂度o(nlogn)的解法
     public static int lengthOfLIS(int[] nums) {
 
         if (nums.length == 1) return 1;
