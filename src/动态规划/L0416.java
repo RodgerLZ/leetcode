@@ -4,6 +4,35 @@ package 动态规划;
  * 416. 分割等和子集（背包问题）
  */
 public class L0416 {
+
+    // 优化空间复杂度
+    // 将二维的动态数组优化为一维的
+    public static boolean canPartitionNew(int[] nums) {
+
+        int sum = 0;
+        for (int i : nums) {
+            sum += i;
+        }
+
+        if ((sum & 1) == 1) return false;
+
+        int target = sum / 2;
+        boolean[] dp = new boolean[target+1];
+        dp[0] = true;
+
+        for (int i : nums) {
+            // 关键的地方，从后向前循环
+            for (int j=target; j>0; j--) {
+
+                if (i<=j) {
+                    dp[j] = dp[j] || dp[j - i];
+                }
+            }
+        }
+
+        return dp[target];
+    }
+
     public static boolean canPartition(int[] nums) {
 
         int sum = 0;
@@ -41,6 +70,12 @@ public class L0416 {
     }
 
     public static void main(String[] args) {
-        System.out.println(canPartition(new int[]{1,2,5}));
+
+        System.out.println(canPartition(new int[]{1, 2, 5}));
+        System.out.println(canPartition(new int[]{1, 5, 11, 5}));
+        System.out.println(canPartition(new int[]{1, 2, 3, 5}));
+        System.out.println(canPartitionNew(new int[]{1, 2, 5}));
+        System.out.println(canPartitionNew(new int[]{1, 5, 11, 5}));
+        System.out.println(canPartitionNew(new int[]{1, 2, 3, 5}));
     }
 }
