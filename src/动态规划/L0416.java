@@ -28,6 +28,9 @@ public class L0416 {
                     dp[j] = dp[j] || dp[j - i];
                 }
             }
+
+            // 只要 dp[target] = true 立马返回，不等待所有循环完成
+            if (dp[target]) return true;
         }
 
         return dp[target];
