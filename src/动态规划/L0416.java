@@ -22,14 +22,13 @@ public class L0416 {
 
         for (int i : nums) {
             // 关键的地方，从后向前循环
-            for (int j=target; j>0; j--) {
-
-                if (i<=j) {
-                    dp[j] = dp[j] || dp[j - i];
-                }
+            // 只循环到 j>=i 处，因为 j<i 时，dp[j] 保持不变
+            for (int j=target; j>=i; j--) {
+                dp[j] = dp[j] || dp[j - i];
             }
 
             // 只要 dp[target] = true 立马返回，不等待所有循环完成
+            // 立即退出后，从leetcode的结果看，执行时间显著减少
             if (dp[target]) return true;
         }
 
