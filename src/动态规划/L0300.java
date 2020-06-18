@@ -11,17 +11,18 @@ public class L0300 {
         if (nums.length == 0) return 0;
 
         int res = 1;
-        int[] ints = new int[nums.length];
-        ints[0] = 1;
+        // dp[i] 表示以 nums[i] 结尾的「上升子序列」的长度
+        int[] dp = new int[nums.length];
+        dp[0] = 1;
         for (int i=1; i<=nums.length-1; i++) {
             for (int j=0; j<i; j++) {
                 if (nums[j] < nums[i]) {
-                    ints[i] = Math.max(ints[i], ints[j]+1);
+                    dp[i] = Math.max(dp[i], dp[j]+1);
                 }
 
-                ints[i] = Math.max(ints[i], 1);
+                dp[i] = Math.max(dp[i], 1);
             }
-            res = Math.max(ints[i], res);
+            res = Math.max(dp[i], res);
         }
 
         return res;
