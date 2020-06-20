@@ -3,7 +3,7 @@ package 动态规划;
 /**
  * 63. 不同路径 II
  */
-public class J0063 {
+public class L0063 {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
 
         if (obstacleGrid.length==0
