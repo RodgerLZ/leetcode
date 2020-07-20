@@ -8,6 +8,8 @@ import java.util.LinkedList;
  */
 public class L0394 {
 
+    // 思路是通过一个双端队列完成的
+    // 另一个思路是通过两个栈（双端队列），其中一个队列用于存储string，另个一用于存储解码得到的数字。
     public static String decodeString(String s) {
 
         char[] chars = s.toCharArray();
